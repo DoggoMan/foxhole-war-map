@@ -1,6 +1,8 @@
+const opts = { attribution: '<a href="https://github.com/pogobanane/foxhole-war-map">warmap github</a>' };
+
 export const mapLayers = {
-    OriginalMapTiles: new L.tileLayer("https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Tiles/{z}/{z}_{x}_{y}.png"),
-    SatelliteMapTiles: new L.tileLayer("https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Sat%20Tiles/{z}/{z}_{x}_{y}.png"),
+  OriginalMapTiles: new L.tileLayer("https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Tiles/{z}/{z}_{x}_{y}.png", opts),
+    SatelliteMapTiles: new L.tileLayer("https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Sat%20Tiles/{z}/{z}_{x}_{y}.png", opts),
 
     RegionNames: new L.LayerGroup(),
     RegionBorders: new L.LayerGroup(),
