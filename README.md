@@ -13,6 +13,8 @@ Foxhole is a cooperative sandbox massively-multiplayer action-strategy video gam
 ### Instructions
 Download the repository and run `npm install` in the root directory to install node dependencies, and then `npm start` to run the app. The app is hosted on port 3002 (changeable in app.js) and can be accessed at `localhost:3002/map`.
 
+In case you use nix, you can instead use `nix-shell -A shell` and then `node app.js`.
+
 ### Contributing
 Contributions are welcome as the Foxhole War Map is an open source project. Submit a pull request to the `development` branch of the repository.
 
