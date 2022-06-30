@@ -3,23 +3,29 @@ const warapi = require('./warapi.js');
 
 const app = express();
 
-app.use('/map', express.static('public'));
+// prefix starts with /
+const endpoints = (prefix) => {
+  app.use(prefix, express.static('public'));
 
-app.get('/map', (request, response) => {
-    response.sendFile(__dirname + '/views/index.html');
-});
+  app.get(prefix, (request, response) => {
+      response.sendFile(__dirname + '/views/index.html');
+  });
 
-app.get('/map/api/dynamic', (request, response) => {
-    response.sendFile(__dirname + '/data/dynamic.json');
-});
+  app.get(prefix + '/api/dynamic', (request, response) => {
+      response.sendFile(__dirname + '/data/dynamic.json');
+  });
 
-app.get('/map/api/static', (request, response) => {
-    response.sendFile(__dirname + '/data/static.json');
-});
+  app.get(prefix + '/api/static', (request, response) => {
+      response.sendFile(__dirname + '/data/static.json');
+  });
 
-app.get('/map/api/regions', (request, response) => {
-    response.sendFile(__dirname + '/data/regions.json');
-});
+  app.get(prefix + '/api/regions', (request, response) => {
+      response.sendFile(__dirname + '/data/regions.json');
+  });
+}
+
+endpoints("/");
+endpoints("/map");
 
 const port = 3002;
 app.listen(port, () => {
