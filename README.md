@@ -1,7 +1,7 @@
 Foxhole War Map
 ===============
 
-[warmap.pogobanane.de/map](https://warmap.pogobanane.de/map/)
+[warmap.pogobanane.de](https://warmap.pogobanane.de/)
 
 ![Foxhole War Map](https://i.imgur.com/g3QaBO2.png)
 
