@@ -2,7 +2,7 @@ import {o, w, k, regions} from './MapRegions.js';
 
 import MapItem from './MapItem.js';
 import MapTextItem from './MapTextItem.js';
-import { mapLayers } from "./MapLayers.js";
+import { mapLayers, allLabels } from "./MapLayers.js";
 
 // Converts a coordinate from the regional coordinate system to the world coordinate system
 function convertCoords(regionId, x, y) {
@@ -95,7 +95,7 @@ export function generateMapItems(){
                     className: "location-label", 
                     html: mapText.text,
                     iconSize: [150,30], 
-                    iconAnchor: [75,15],
+                    iconAnchor: [75,30],
                   }),
               });
               if (mapText.type == "Major") {
@@ -107,8 +107,10 @@ export function generateMapItems(){
               } else {
                 return; // unknown type. Ignore it.
               }
-              mapLayers.TownNames.addLayer(marker);
-              //marker.addTo(mapLayers.TownNames);
+              allLabels.push({
+                loc: [mapText.y, mapText.x],
+                title: mapText.text,
+              });
             });
             dynamicData.map((mapItem) => {
                 try{

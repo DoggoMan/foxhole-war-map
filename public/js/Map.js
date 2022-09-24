@@ -1,4 +1,4 @@
-import { mapLayers } from './MapLayers.js';
+import { mapLayers, allLabels } from './MapLayers.js';
 import { mapLegend } from './MapLegend.js';
 
 import { generateRegions } from './MapRegions.js';
@@ -77,12 +77,21 @@ generateMapItems();
 mapLegend().addTo(map);
 
 // Map Search
+function localData(query, callResponse) {
+  callResponse(allLabels);
+  return {	//called to stop previous requests on map move
+			abort: function() {
+				console.log('aborted request:'+ query);
+			}
+	};
+}
+
 var controlSearch = new L.Control.Search({
   position: "topright",
-  layer: mapLayers.TownNames,
+  //layer: allLabels,
+  sourceData: localData,
   initial: false,
   zoom: 12,
   marker: false,
-  propertyName: "searchKey",
 })
 map.addControl(controlSearch);
