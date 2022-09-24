@@ -133,5 +133,5 @@ export const ComponentMine = new MapIcon({iconUrl: "./icons/MapIconComponentMine
 export const Sulfur = new MapIcon({iconUrl: "./icons/MapIconSulfur.png"});
 export const SulfurMine = new MapIcon({iconUrl: "./icons/MapIconSulfurMine.png"});
 export const Coal = new MapIcon({iconUrl: "./icons/MapIconCoal.png"});
+export const Oil = new MapIcon({iconUrl: "./icons/MapIconOilWell.png"});
 export const Fuel = new MapIcon({iconUrl: "./icons/MapIconFuel.png"});
-export const OilWell = new MapIcon({iconUrl: "./icons/MapIconOilWell.png"});

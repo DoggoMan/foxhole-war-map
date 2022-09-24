@@ -26,11 +26,11 @@ const HTMLIcons = {
     ComponentField: "<img src='./icons/MapIconComponents.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     SulfurField: "<img src='./icons/MapIconSulfur.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     CoalField: "<img src='./icons/MapIconCoal.png' style='width:24px;height:24px;vertical-align:middle;'/>",
+    OilField: "<img src='./icons/MapIconOilWell.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     
     SalvageMine: "<img src='./icons/MapIconSalvageMine.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     ComponentMine: "<img src='./icons/MapIconComponentMine.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     SulfurMine: "<img src='./icons/MapIconSulfurMine.png' style='width:24px;height:24px;vertical-align:middle;'/>",
-    OilWell: "<img src='./icons/MapIconOilWell.png' style='width:24px;height:24px;vertical-align:middle;'/>",
 };
 
 const baseTree = [
@@ -82,6 +82,7 @@ const overlaysTree = {
                 { label: HTMLIcons.ComponentField + " Component Field",         layer: mapLayers.ComponentFields },
                 { label: HTMLIcons.SulfurField + " Sulfur Field",               layer: mapLayers.SulfurFields },
                 { label: HTMLIcons.CoalField + " Coal Field",               layer: mapLayers.CoalFields },
+                { label: HTMLIcons.OilField + " Oil Field",                      layer: mapLayers.OilFields },
             ]
         },
         {
@@ -90,7 +91,6 @@ const overlaysTree = {
                 { label: HTMLIcons.SalvageMine + " Salvage Mines",              layer: mapLayers.SalvageMines },
                 { label: HTMLIcons.ComponentMine + " Component Mines",          layer: mapLayers.ComponentMines },
                 { label: HTMLIcons.SulfurMine + " Sulfur Mines",                layer: mapLayers.SulfurMines },
-                { label: HTMLIcons.OilWell + " Oil Wells",                      layer: mapLayers.OilWells },
             ]
         }
     ]

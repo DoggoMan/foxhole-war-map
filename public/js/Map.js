@@ -46,11 +46,11 @@ const map = L.map("map", {
         mapLayers.ComponentFields,
         mapLayers.SulfurFields,
         mapLayers.CoalFields,
+        mapLayers.OilFields,
         
         mapLayers.SalvageMines,
         mapLayers.ComponentMines,
         mapLayers.SulfurMines,
-        mapLayers.OilWells,
     ]
 });
 

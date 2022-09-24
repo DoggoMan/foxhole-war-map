@@ -31,9 +31,9 @@ export const mapLayers = {
     ComponentFields: new L.LayerGroup(),
     SulfurFields: new L.LayerGroup(),
     CoalFields: new L.LayerGroup(),
+    OilFields: new L.LayerGroup(),
     
     SalvageMines: new L.LayerGroup(),
     ComponentMines: new L.LayerGroup(),
     SulfurMines: new L.LayerGroup(),
-    OilWells: new L.LayerGroup(),
 };
