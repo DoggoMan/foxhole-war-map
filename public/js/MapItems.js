@@ -87,9 +87,6 @@ export function generateMapItems(){
     retrieveStaticData.then((staticData) => {
         retrieveDynamicData.then((dynamicData) => {
             staticData.map((mapText) => {
-              if (mapText.type == "Minor") {
-                return;
-              }
               let marker = L.marker([mapText.y, mapText.x], {
                   searchKey: mapText.text,
                   pane:'locationLabelsPane',
@@ -101,7 +98,15 @@ export function generateMapItems(){
                     iconAnchor: [75,15],
                   }),
               });
-              marker.min_zoom = 3;
+              if (mapText.type == "Major") {
+                marker.min_zoom = 3;
+                mapLayers.TownNames.addLayer(marker);
+              } else if (mapText.type == "Minor") {
+                marker.min_zoom = 5;
+                mapLayers.LocationNames.addLayer(marker);
+              } else {
+                return; // unknown type. Ignore it.
+              }
               mapLayers.TownNames.addLayer(marker);
               //marker.addTo(mapLayers.TownNames);
             });

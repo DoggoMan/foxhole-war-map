@@ -24,6 +24,7 @@ const map = L.map("map", {
         mapLayers.RegionNames,
         mapLayers.RegionBorders,
         mapLayers.TownNames,
+        mapLayers.LocationNames,
 
         mapLayers.TownBases,
         mapLayers.RelicBases,

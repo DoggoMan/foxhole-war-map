@@ -42,7 +42,6 @@ const overlaysTree = {
     selectAllCheckbox: true,
     label: "<strong>Map Legend</strong>",
     children: [
-        { label: "Town Names",                                                  layer: mapLayers.TownNames },
         { label: "Region Names",                                                layer: mapLayers.RegionNames },
         { label: "Region Borders",                                              layer: mapLayers.RegionBorders },
         {
