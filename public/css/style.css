@@ -20,7 +20,7 @@ body {
     color: white;
     text-align: center;
     font-size: 16px;
-    pointer-events: none; /* doesnt seem to work since it is overwritten by another definition */
+    pointer-events: none !important;
 }
   
 .location-label{
@@ -30,7 +30,7 @@ body {
     color: white;
     text-align: center;
     font-size: 12px;
-    pointer-events: none; /* doesnt seem to work since it is overwritten by another definition */
+    pointer-events: none !important;
 }
 
 a:link {

@@ -95,11 +95,11 @@ export function generateMapItems(){
                     className: "location-label", 
                     html: mapText.text,
                     iconSize: [150,30], 
-                    iconAnchor: [75,30],
+                    iconAnchor: [75,15],
                   }),
               });
               if (mapText.type == "Major") {
-                marker.min_zoom = 3;
+                marker.min_zoom = 3.5;
                 mapLayers.TownNames.addLayer(marker);
               } else if (mapText.type == "Minor") {
                 marker.min_zoom = 5;
