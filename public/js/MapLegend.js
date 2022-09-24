@@ -39,6 +39,7 @@ const baseTree = [
 ];
 
 const overlaysTree = {
+    selectAllCheckbox: true,
     label: "<strong>Map Legend</strong>",
     children: [
         { label: "Region Names",                                                layer: mapLayers.RegionNames },
