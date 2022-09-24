@@ -233,6 +233,12 @@ export default class MapItem{
                 this.layer = mapLayers.TownBases;
                 this.pane = 'basesPane';
                 break;
+            case 61:
+                this.description = 'Coal Field';
+                this.iconImage = MapIcon.Coal;
+                this.layer = mapLayers.CoalFields;
+                this.pane = 'resourcesPane';
+                break;
             default:
                 console.log('Unknown IconType - ' + iconType);
         }

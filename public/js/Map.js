@@ -45,6 +45,7 @@ const map = L.map("map", {
         mapLayers.SalvageFields,
         mapLayers.ComponentFields,
         mapLayers.SulfurFields,
+        mapLayers.CoalFields,
         
         mapLayers.SalvageMines,
         mapLayers.ComponentMines,

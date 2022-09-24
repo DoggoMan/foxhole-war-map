@@ -25,6 +25,7 @@ const HTMLIcons = {
     SalvageField: "<img src='./icons/MapIconSalvage.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     ComponentField: "<img src='./icons/MapIconComponents.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     SulfurField: "<img src='./icons/MapIconSulfur.png' style='width:24px;height:24px;vertical-align:middle;'/>",
+    CoalField: "<img src='./icons/MapIconCoal.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     
     SalvageMine: "<img src='./icons/MapIconSalvageMine.png' style='width:24px;height:24px;vertical-align:middle;'/>",
     ComponentMine: "<img src='./icons/MapIconComponentMine.png' style='width:24px;height:24px;vertical-align:middle;'/>",
@@ -80,6 +81,7 @@ const overlaysTree = {
                 { label: HTMLIcons.SalvageField + " Salvage Field",             layer: mapLayers.SalvageFields },
                 { label: HTMLIcons.ComponentField + " Component Field",         layer: mapLayers.ComponentFields },
                 { label: HTMLIcons.SulfurField + " Sulfur Field",               layer: mapLayers.SulfurFields },
+                { label: HTMLIcons.CoalField + " Coal Field",               layer: mapLayers.CoalFields },
             ]
         },
         {
