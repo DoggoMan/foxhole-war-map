@@ -58,6 +58,7 @@ const map = L.map("map", {
 map.createPane('basesPane').style.zIndex = 609;
 map.createPane('structuresPane').style.zIndex = 608;
 map.createPane('resourcesPane').style.zIndex = 607;
+map.createPane('locationLabelsPane').style.zIndex = 600;
 map.createPane('regionLabelsPane').style.zIndex = 620;
 map.createPane('regionBordersPane').style.zIndex = 400;
 map.createPane('backgroundPane').style.zIndex = 100;

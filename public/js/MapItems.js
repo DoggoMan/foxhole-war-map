@@ -2,6 +2,7 @@ import {o, w, k, regions} from './MapRegions.js';
 
 import MapItem from './MapItem.js';
 import MapTextItem from './MapTextItem.js';
+import { mapLayers } from "./MapLayers.js";
 
 // Converts a coordinate from the regional coordinate system to the world coordinate system
 function convertCoords(regionId, x, y) {
@@ -51,7 +52,7 @@ export function generateMapItems(){
                 if(region === null) { return; }
                 region.mapTextItems.map(mapTextItem => {
                     let coords = convertCoords(region.regionId, mapTextItem.x, mapTextItem.y);
-                    let mapTextItemObject = new MapTextItem(region.regionId, mapTextItem.text, coords.xcoord, coords.ycoord);
+                    let mapTextItemObject = new MapTextItem(region.regionId, mapTextItem.text, mapTextItem.mapMarkerType, coords.xcoord, coords.ycoord);
                     staticMapItems.push(mapTextItemObject);
                 });
             });
@@ -85,6 +86,24 @@ export function generateMapItems(){
 
     retrieveStaticData.then((staticData) => {
         retrieveDynamicData.then((dynamicData) => {
+            staticData.map((mapText) => {
+              console.log(mapText);
+              if (mapText.type == "Minor") {
+                return;
+              }
+              L.marker([mapText.y, mapText.x], {
+                  title: mapText.text,
+                  pane:'locationLabelsPane',
+                  bubblingMouseEvents: true,
+                  icon: L.divIcon({
+                    className: "location-label", 
+                    html: mapText.text,
+                    iconSize: [150,30], 
+                    iconAnchor: [75,15],
+                    searchKey: mapText.text,
+                  }),
+              }).addTo(mapLayers.RegionNames);
+            });
             dynamicData.map((mapItem) => {
                 try{
                     let closestTown = findClosest(staticData, mapItem);
