@@ -9,9 +9,11 @@ const map = L.map("map", {
     // Map State Options
     crs: L.CRS.Simple,
     center: [-128, 128],
-    zoom: 3,
-    minZoom: 2,
+    zoom: 1.5,
+    minZoom: 1,
     maxZoom: 5,
+    zoomSnap: 0.5,
+    zoomDelta: 0.5,
     maxBounds: [[-256,-50],[0,306]],
     maxBoundsViscosity: 1.0,
 
