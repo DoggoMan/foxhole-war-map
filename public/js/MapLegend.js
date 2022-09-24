@@ -47,6 +47,7 @@ const overlaysTree = {
         { label: "Region Borders",                                              layer: mapLayers.RegionBorders },
         {
             label: "<strong>Bases</strong>",
+            selectAllCheckbox: true,
             children: [
                 { label: HTMLIcons.TownBase + " Town Bases",                    layer: mapLayers.TownBases },
                 { label: HTMLIcons.RelicBase + ' Relic Bases',                  layer: mapLayers.RelicBases },
@@ -56,6 +57,7 @@ const overlaysTree = {
         },
         {
             label: "<strong>Structures</strong>",
+            selectAllCheckbox: true,
             children: [
                 { label: HTMLIcons.ObservationTower + " Observation Towers",    layer: mapLayers.ObservationTowers },
                 { label: HTMLIcons.RocketSite + " Rocket Sites",                layer: mapLayers.RocketSites },
@@ -64,6 +66,7 @@ const overlaysTree = {
         },
         {
             label: "<strong>Logistics</strong>",
+            selectAllCheckbox: true,
             children: [
                 { label: HTMLIcons.Hospital + " Hospitals",                     layer: mapLayers.Hospitals },
                 { label: HTMLIcons.Factory + " Factories",                      layer: mapLayers.Factories },
@@ -79,6 +82,7 @@ const overlaysTree = {
         },
         {
             label: "<strong>Resources</strong>",
+            selectAllCheckbox: true,
             children: [
                 { label: HTMLIcons.SalvageField + " Salvage Field",             layer: mapLayers.SalvageFields },
                 { label: HTMLIcons.ComponentField + " Component Field",         layer: mapLayers.ComponentFields },
@@ -89,6 +93,7 @@ const overlaysTree = {
         },
         {
             label: "<strong>Mines</strong>",
+            selectAllCheckbox: true,
             children: [
                 { label: HTMLIcons.SalvageMine + " Salvage Mines",              layer: mapLayers.SalvageMines },
                 { label: HTMLIcons.ComponentMine + " Component Mines",          layer: mapLayers.ComponentMines },
