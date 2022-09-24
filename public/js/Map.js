@@ -70,3 +70,14 @@ generateMapItems();
 
 // Map Legend
 mapLegend().addTo(map);
+
+// Map Search
+var controlSearch = new L.Control.Search({
+  position: "topright",
+  layer: mapLayers.TownBases,
+  initial: false,
+  zoom: 12,
+  marker: false,
+  propertyName: "searchKey",
+})
+map.addControl(controlSearch);

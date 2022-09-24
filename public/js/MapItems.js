@@ -87,7 +87,8 @@ export function generateMapItems(){
         retrieveDynamicData.then((dynamicData) => {
             dynamicData.map((mapItem) => {
                 try{
-                    let marker = L.marker([mapItem.y, mapItem.x], {icon:mapItem.iconImage, pane:mapItem.pane}).addTo(mapItem.layer);
+                    let closestTown = findClosest(staticData, mapItem);
+                    let marker = L.marker([mapItem.y, mapItem.x], {icon:mapItem.iconImage, pane:mapItem.pane, searchKey: closestTown}).addTo(mapItem.layer);
         
                     //Faction Icon
                     let factionIcon = "";
@@ -100,7 +101,7 @@ export function generateMapItems(){
                             break;
                     }
         
-                    marker.bindTooltip(`${factionIcon}<strong><font color='#d67b52'>${findClosest(staticData, mapItem)}</font></strong><br />${mapItem.teamPrefix}${mapItem.description}<br />${mapItem.regionName}`);
+                    marker.bindTooltip(`${factionIcon}<strong><font color='#d67b52'>${closestTown}</font></strong><br />${mapItem.teamPrefix}${mapItem.description}<br />${mapItem.regionName}`);
                 }
                 catch(error){
                     console.log(`Error - Could not load Map Marker ${mapItem.iconType} in ${mapItem.regionName}.\n` + error);
