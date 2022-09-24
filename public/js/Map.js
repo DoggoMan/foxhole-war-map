@@ -21,6 +21,7 @@ const map = L.map("map", {
 
         mapLayers.RegionNames,
         mapLayers.RegionBorders,
+        mapLayers.TownNames,
 
         mapLayers.TownBases,
         mapLayers.RelicBases,
@@ -75,7 +76,7 @@ mapLegend().addTo(map);
 // Map Search
 var controlSearch = new L.Control.Search({
   position: "topright",
-  layer: mapLayers.TownBases,
+  layer: mapLayers.TownNames,
   initial: false,
   zoom: 12,
   marker: false,

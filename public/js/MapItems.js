@@ -92,7 +92,7 @@ export function generateMapItems(){
                 return;
               }
               L.marker([mapText.y, mapText.x], {
-                  title: mapText.text,
+                  searchKey: mapText.text,
                   pane:'locationLabelsPane',
                   bubblingMouseEvents: true,
                   icon: L.divIcon({
@@ -100,9 +100,8 @@ export function generateMapItems(){
                     html: mapText.text,
                     iconSize: [150,30], 
                     iconAnchor: [75,15],
-                    searchKey: mapText.text,
                   }),
-              }).addTo(mapLayers.RegionNames);
+              }).addTo(mapLayers.TownNames);
             });
             dynamicData.map((mapItem) => {
                 try{
