@@ -6,7 +6,7 @@ export const mapLayers = {
 
     RegionNames: new L.LayerGroup(),
     RegionBorders: new L.LayerGroup(),
-    TownNames: new L.LayerGroup(),
+    TownNames: new ZoomShowHide(),
  
     TownBases: new L.LayerGroup(),
     RelicBases: new L.LayerGroup(),

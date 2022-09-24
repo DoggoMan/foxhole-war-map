@@ -87,11 +87,10 @@ export function generateMapItems(){
     retrieveStaticData.then((staticData) => {
         retrieveDynamicData.then((dynamicData) => {
             staticData.map((mapText) => {
-              console.log(mapText);
               if (mapText.type == "Minor") {
                 return;
               }
-              L.marker([mapText.y, mapText.x], {
+              let marker = L.marker([mapText.y, mapText.x], {
                   searchKey: mapText.text,
                   pane:'locationLabelsPane',
                   bubblingMouseEvents: true,
@@ -101,7 +100,10 @@ export function generateMapItems(){
                     iconSize: [150,30], 
                     iconAnchor: [75,15],
                   }),
-              }).addTo(mapLayers.TownNames);
+              });
+              marker.min_zoom = 3;
+              mapLayers.TownNames.addLayer(marker);
+              //marker.addTo(mapLayers.TownNames);
             });
             dynamicData.map((mapItem) => {
                 try{
