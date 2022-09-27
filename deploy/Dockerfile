@@ -1,3 +1,3 @@
-FROM pogobanane/foxhole-warmap
+FROM pogobanane/foxhole-warmap:latest
 
 EXPOSE 3002

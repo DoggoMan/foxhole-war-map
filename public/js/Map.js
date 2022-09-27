@@ -14,6 +14,7 @@ const map = L.map("map", {
     maxZoom: 5,
     zoomSnap: 0.5,
     zoomDelta: 0.5,
+    wheelPxPerZoomLevel: 120,
     maxBounds: [[-256,-50],[0,306]],
     maxBoundsViscosity: 1.0,
 

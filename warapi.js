@@ -1,6 +1,8 @@
 const XMLHttpRequest = require('xhr2');
 const fs = require('fs');
 
+const domain = "war-service-live.foxholeservices.com";
+
 module.exports.updateWarData = function () {
     // Create data folder if it does not exist
     if(!fs.existsSync('data')) fs.mkdirSync('data');
@@ -40,7 +42,7 @@ module.exports.updateWarData = function () {
 function queryRegionDynamic(region) {
     return new Promise(function (resolve, reject) {
         const request = new XMLHttpRequest();
-        request.open('GET', `https://war-service-live.foxholeservices.com/api/worldconquest/maps/${region}/dynamic/public`, true);
+        request.open('GET', `https://${domain}/api/worldconquest/maps/${region}/dynamic/public`, true);
         request.responseType = 'json';
 
         request.onload = function () {
@@ -67,7 +69,7 @@ function queryRegionDynamic(region) {
 function queryRegionStatic(region) {
     return new Promise(function (resolve, reject) {
         const request = new XMLHttpRequest();
-        request.open('GET', `https://war-service-live.foxholeservices.com/api/worldconquest/maps/${region}/static`, true);
+        request.open('GET', `https://${domain}.foxholeservices.com/api/worldconquest/maps/${region}/static`, true);
         request.responseType = 'json';
 
         request.onload = function () {
@@ -93,7 +95,7 @@ function queryRegionStatic(region) {
 function queryRegions() {
     return new Promise(function (resolve, reject) {
         const request = new XMLHttpRequest();
-        request.open('GET', 'https://war-service-live.foxholeservices.com/api/worldconquest/maps', true);
+        request.open('GET', `https://${domain}.foxholeservices.com/api/worldconquest/maps`, true);
         request.responseType = 'json';
 
         request.onload = function () {

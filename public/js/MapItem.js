@@ -96,8 +96,8 @@ export default class MapItem{
                 this.layer = mapLayers.ComponentFields;
                 this.pane = 'resourcesPane';
                 break;
-            /*
-            case 22:
+            /* removed in v0.50
+            case 22: 
                 this.description = 'Fuel Field';
                 this.iconImage = MapIcon.Fuel;
                 this.pane = 'resourcesPane';
