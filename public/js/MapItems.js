@@ -2,6 +2,7 @@ import {o, w, k, regions} from './MapRegions.js';
 
 import MapItem from './MapItem.js';
 import MapTextItem from './MapTextItem.js';
+import { mapLayers, allLabels } from "./MapLayers.js";
 
 // Converts a coordinate from the regional coordinate system to the world coordinate system
 function convertCoords(regionId, x, y) {
@@ -51,7 +52,7 @@ export function generateMapItems(){
                 if(region === null) { return; }
                 region.mapTextItems.map(mapTextItem => {
                     let coords = convertCoords(region.regionId, mapTextItem.x, mapTextItem.y);
-                    let mapTextItemObject = new MapTextItem(region.regionId, mapTextItem.text, coords.xcoord, coords.ycoord);
+                    let mapTextItemObject = new MapTextItem(region.regionId, mapTextItem.text, mapTextItem.mapMarkerType, coords.xcoord, coords.ycoord);
                     staticMapItems.push(mapTextItemObject);
                 });
             });
@@ -85,9 +86,36 @@ export function generateMapItems(){
 
     retrieveStaticData.then((staticData) => {
         retrieveDynamicData.then((dynamicData) => {
+            staticData.map((mapText) => {
+              let marker = L.marker([mapText.y, mapText.x], {
+                  searchKey: mapText.text,
+                  pane:'locationLabelsPane',
+                  bubblingMouseEvents: true,
+                  icon: L.divIcon({
+                    className: "location-label", 
+                    html: mapText.text,
+                    iconSize: [150,30], 
+                    iconAnchor: [75,15],
+                  }),
+              });
+              if (mapText.type == "Major") {
+                marker.min_zoom = 3.5;
+                mapLayers.TownNames.addLayer(marker);
+              } else if (mapText.type == "Minor") {
+                marker.min_zoom = 5;
+                mapLayers.LocationNames.addLayer(marker);
+              } else {
+                return; // unknown type. Ignore it.
+              }
+              allLabels.push({
+                loc: [mapText.y, mapText.x],
+                title: mapText.text,
+              });
+            });
             dynamicData.map((mapItem) => {
                 try{
-                    let marker = L.marker([mapItem.y, mapItem.x], {icon:mapItem.iconImage, pane:mapItem.pane}).addTo(mapItem.layer);
+                    let closestTown = findClosest(staticData, mapItem);
+                    let marker = L.marker([mapItem.y, mapItem.x], {icon:mapItem.iconImage, pane:mapItem.pane, searchKey: closestTown}).addTo(mapItem.layer);
         
                     //Faction Icon
                     let factionIcon = "";
@@ -100,7 +128,7 @@ export function generateMapItems(){
                             break;
                     }
         
-                    marker.bindTooltip(`${factionIcon}<strong><font color='#d67b52'>${findClosest(staticData, mapItem)}</font></strong><br />${mapItem.teamPrefix}${mapItem.description}<br />${mapItem.regionName}`);
+                    marker.bindTooltip(`${factionIcon}<strong><font color='#d67b52'>${closestTown}</font></strong><br />${mapItem.teamPrefix}${mapItem.description}<br />${mapItem.regionName}`);
                 }
                 catch(error){
                     console.log(`Error - Could not load Map Marker ${mapItem.iconType} in ${mapItem.regionName}.\n` + error);

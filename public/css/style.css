@@ -20,8 +20,19 @@ body {
     color: white;
     text-align: center;
     font-size: 16px;
+    pointer-events: none !important;
 }
   
+.location-label{
+    white-space:nowrap;
+    text-shadow: 0 0 0.1em black, 0 0 0.1em black,
+          0 0 0.1em black,0 0 0.1em black,0 0 0.1em;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    pointer-events: none !important;
+}
+
 a:link {
     color: #d67b52;
 }

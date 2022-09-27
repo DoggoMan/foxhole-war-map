@@ -96,8 +96,8 @@ export default class MapItem{
                 this.layer = mapLayers.ComponentFields;
                 this.pane = 'resourcesPane';
                 break;
-            /*
-            case 22:
+            /* removed in v0.50
+            case 22: 
                 this.description = 'Fuel Field';
                 this.iconImage = MapIcon.Fuel;
                 this.pane = 'resourcesPane';
@@ -185,12 +185,12 @@ export default class MapItem{
                 this.layer = mapLayers.ComponentMines;
                 this.pane = 'resourcesPane';
                 break;
-            case 41:
-                this.description = 'Oil Well';
-                this.iconImage = MapIcon.OilWell;
-                this.layer = mapLayers.OilWells;
-                this.pane = 'resourcesPane';
-                break;
+            //case 41: unused as of foxhole 1.0
+                //this.description = 'Oil Well';
+                //this.iconImage = MapIcon.OilWell;
+                //this.layer = mapLayers.OilWells;
+                //this.pane = 'resourcesPane';
+                //break;
             case 45: case 46: case 47:
                 this.description = 'Relic Base';
                 this.iconImage = MapIcon.RelicBase[this.teamId];
@@ -232,6 +232,18 @@ export default class MapItem{
                 this.iconImage = MapIcon.TownBase3[this.teamId];
                 this.layer = mapLayers.TownBases;
                 this.pane = 'basesPane';
+                break;
+            case 61:
+                this.description = 'Coal Field';
+                this.iconImage = MapIcon.Coal;
+                this.layer = mapLayers.CoalFields;
+                this.pane = 'resourcesPane';
+                break;
+            case 62:
+                this.description = 'Oil Field';
+                this.iconImage = MapIcon.Oil;
+                this.layer = mapLayers.OilFields;
+                this.pane = 'resourcesPane';
                 break;
             default:
                 console.log('Unknown IconType - ' + iconType);
