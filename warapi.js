@@ -69,7 +69,7 @@ function queryRegionDynamic(region) {
 function queryRegionStatic(region) {
     return new Promise(function (resolve, reject) {
         const request = new XMLHttpRequest();
-        request.open('GET', `https://${domain}.foxholeservices.com/api/worldconquest/maps/${region}/static`, true);
+        request.open('GET', `https://${domain}/api/worldconquest/maps/${region}/static`, true);
         request.responseType = 'json';
 
         request.onload = function () {
@@ -95,7 +95,7 @@ function queryRegionStatic(region) {
 function queryRegions() {
     return new Promise(function (resolve, reject) {
         const request = new XMLHttpRequest();
-        request.open('GET', `https://${domain}.foxholeservices.com/api/worldconquest/maps`, true);
+        request.open('GET', `https://${domain}/api/worldconquest/maps`, true);
         request.responseType = 'json';
 
         request.onload = function () {
