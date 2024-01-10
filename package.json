@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Sethfire",
+  "author": "DoggoMan",
   "dependencies": {
     "express": "^4.17.1",
     "xhr2": "^0.2.1"
