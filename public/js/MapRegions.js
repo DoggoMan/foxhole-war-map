@@ -9,7 +9,7 @@ const mapWidth = mapBounds[1][1] - mapBounds[0][1]
 const mapOrigin = { x: 128, y: -128 }
 
 export const o = mapOrigin // Shortened
-export const w = mapWidth / 6.06 // Standard Region Width
+export const w = mapWidth / 7 // Standard Region Width
 export const k = (w * Math.sqrt(3)) / 2 // Standard Region Height
 
 export const regions = [
@@ -30,18 +30,18 @@ export const regions = [
   },
   { id: 11, name: 'Reaching Trail', center: [o.y + 2 * k, o.x] },
   { id: 12, name: 'Stonecradle', center: [o.y + k, o.x - 1.5 * w] },
-  { id: 13, name: 'Farranac Coast', center: [o.y, o.x - 1.5 * w] },
-  { id: 14, name: 'Westgate', center: [o.y - k, o.x - 1.5 * w] },
-  { id: 15, name: "Fisherman's Row", center: [o.y - 0.5 * k, o.x - 2.25 * w] },
+  { id: 13, name: 'Farranac Coast', center: [o.y + 0.5 * k, o.x - 2.25 * w] },
+  { id: 14, name: 'Westgate', center: [o.y - 0.5 * k, o.x - 2.25 * w] },
+  { id: 15, name: "Fisherman's Row", center: [o.y, o.x - 3 * w] },
   {
     id: 16,
     name: 'The Oarbreaker Isles',
-    center: [o.y + 0.5 * k, o.x - 2.25 * w],
+    center: [o.y + 1 * k, o.x - 3 * w],
   },
   { id: 17, name: 'Great March', center: [o.y - 2 * k, o.x] },
-  { id: 18, name: 'Tempest Island', center: [o.y - 0.5 * k, o.x + 2.25 * w] },
-  { id: 19, name: 'Godcrofts', center: [o.y + 0.5 * k, o.x + 2.25 * w] },
-  { id: 20, name: 'Endless Shore', center: [o.y, o.x + 1.5 * w] },
+  { id: 18, name: 'Tempest Island', center: [o.y, o.x + 3 * w] },
+  { id: 19, name: 'Godcrofts', center: [o.y + 1 * k, o.x + 3 * w] },
+  { id: 20, name: 'Endless Shore', center: [o.y - 0.5 * k, o.x + 2.25 * w] },
   { id: 21, name: "Allod's Bight", center: [o.y - k, o.x + 1.5 * w] },
   { id: 22, name: 'Weathered Expanse', center: [o.y + k, o.x + 1.5 * w] },
   { id: 23, name: 'The Drowned Vale', center: [o.y - 0.5 * k, o.x + 0.75 * w] },
@@ -58,12 +58,22 @@ export const regions = [
   { id: 34, name: 'Basin Sionnach', center: [o.y + 3 * k, o.x] },
   { id: 35, name: 'Howl County', center: [o.y + 2.5 * k, o.x + 0.75 * w] },
   { id: 36, name: 'Clanshead Valley', center: [o.y + 2 * k, o.x + 1.5 * w] },
-  { id: 37, name: 'Morgens Crossing', center: [o.y + 1.5 * k, o.x + 2.25 * w] },
-  { id: 38, name: 'The Fingers', center: [o.y - 1.5 * k, o.x + 2.25 * w] },
+  {
+    id: 37,
+    name: "Morgen's Crossing",
+    center: [o.y + 1.5 * k, o.x + 2.25 * w],
+  },
+  { id: 38, name: 'The Fingers', center: [o.y - k, o.x + 3 * w] },
   { id: 39, name: 'Terminus', center: [o.y - 2 * k, o.x + 1.5 * w] },
   { id: 40, name: 'Kalokai', center: [o.y - 3 * k, o.x] },
   { id: 41, name: 'Ash Fields', center: [o.y - 2 * k, o.x - 1.5 * w] },
   { id: 42, name: 'Origin', center: [o.y - 1.5 * k, o.x - 2.25 * w] },
+  { id: 43, name: 'Sableport', center: [o.y - k, o.x - 1.5 * w] },
+  { id: 44, name: "King's Cage", center: [o.y, o.x - 1.5 * w] },
+  { id: 45, name: 'Stlican Shelf', center: [o.y + 0.5 * k, o.x + 2.25 * w] },
+  { id: 46, name: 'The Clahstra', center: [o.y, o.x + 1.5 * w] },
+  { id: 47, name: "Reaver's Pass", center: [o.y - 1.5 * k, o.x + 2.25 * w] },
+  { id: 48, name: 'Stema Landing', center: [o.y - 1 * k, o.x - 3 * w] },
 ]
 
 const regionBorders = regions.map((region) => {
